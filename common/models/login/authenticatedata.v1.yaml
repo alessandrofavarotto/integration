@@ -1,0 +1,10 @@
+title: autheticateData
+type: object
+properties:
+  token:
+    type: string
+  duration:
+    type: integer
+required:
+  - token
+  - duration

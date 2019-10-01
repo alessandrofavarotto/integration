@@ -1,0 +1,13 @@
+title: organizationService
+type: object
+properties:
+  id:
+    type: string
+  description:
+    type: string
+  code:
+    type: string
+required:
+  - id
+  - description
+  - code

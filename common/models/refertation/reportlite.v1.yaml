@@ -1,0 +1,26 @@
+title: reportLite
+type: object
+properties:
+  id:
+    type: string
+  acceptanceId:
+    type: string
+  operatorId:
+    type: string
+  file:
+    $ref: ./filelite.v1.yaml
+  activities:
+    type: array
+    items:
+      type: object
+      properties:
+        activityId:
+          type: string
+      required:
+        - activityId
+required:
+  - id
+  - acceptanceId
+  - operatorId
+  - file
+  - activities

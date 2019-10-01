@@ -1,0 +1,41 @@
+title: person
+type: object
+description: ''
+properties:
+  id:
+    type: string
+  firstName:
+    type: string
+  lastName:
+    type: string
+  birthDate:
+    type: string
+    format: date
+  birthCityName:
+    type: string
+  gender:
+    type: string
+    enum:
+      - M
+      - F
+  fiscalCode:
+    type: string
+    maxLength: 16
+    pattern: "/^(?:(?:[B-DF-HJ-NP-TV-Z]|[AEIOU])[AEIOU][AEIOUX]|[B-DF-HJ-NP-TV-Z]{2}[A-Z]){2}[\\dLMNP-V]{2}(?:[A-EHLMPR-T](?:[04LQ][1-9MNP-V]|[1256LMRS][\\dLMNP-V])|[DHPS][37PT][0L]|[ACELMRT][37PT][01LM])(?:[A-MZ][1-9MNP-V][\\dLMNP-V]{2}|[A-M][0L](?:[1-9MNP-V][\\dLMNP-V]|[0L][1-9MNP-V]))[A-Z]$/i"
+  adress:
+    $ref: ./address.v1.yaml
+  birthCountryName:
+    type: string
+  contacts:
+    type: array
+    items:
+      $ref: ./contact.v1.yaml
+required:
+  - id
+  - firstName
+  - lastName
+  - birthDate
+  - birthCityName
+  - gender
+  - fiscalCode
+  - birthCountryName
