@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Refertation
+  title: Medical Reporting
   version: '1.0'
   description: methods for manage integration of refertation
   contact:
@@ -31,7 +31,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../common/models/refertation/appointment.v1.yaml
+                  $ref: ../common/models/medicalreporting/appointment.v1.yaml
         '401':
           description: Unauthorized
           content:
@@ -78,7 +78,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../common/models/refertation/acceptance.v1.yaml
+                  $ref: ../common/models/medicalreporting/acceptance.v1.yaml
         '401':
           description: Unauthorized
           content:
@@ -123,7 +123,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../common/models/refertation/person.v1.yaml
+                $ref: ../common/models/medicalreporting/person.v1.yaml
         '401':
           content:
             application/json:
@@ -167,7 +167,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../common/models/refertation/person.v1.yaml
+                  $ref: ../common/models/medicalreporting/person.v1.yaml
         '401':
           description: Unauthorized
           content:
@@ -206,7 +206,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../common/models/refertation/person.v1.yaml
+                $ref: ../common/models/medicalreporting/person.v1.yaml
         '401':
           description: Unauthorized
           content:
@@ -247,7 +247,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../common/models/refertation/activity.v1.yaml
+                  $ref: ../common/models/medicalreporting/activity.v1.yaml
         '401':
           description: ''
           content:
@@ -286,7 +286,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../common/models/refertation/unit.v1.yaml
+                $ref: ../common/models/medicalreporting/unit.v1.yaml
         '401':
           description: Unauthorized
           content:
@@ -331,7 +331,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../common/models/refertation/report.v1.yaml
+                $ref: ../common/models/medicalreporting/report.v1.yaml
         '401':
           description: Unauthorized
           content:
@@ -361,7 +361,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../common/models/refertation/reportpost.v1.yaml
+              $ref: ../common/models/medicalreporting/reportpost.v1.yaml
         description: object report to save on server
       parameters:
         - schema:
@@ -415,7 +415,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../common/models/refertation/reportlite.v1.yaml
+                  $ref: ../common/models/medicalreporting/reportlite.v1.yaml
             application/xml:
               schema:
                 type: object
