@@ -311,6 +311,7 @@ paths:
           in: query
           name: id
           description: identify of unit
+          required: true
       description: method to find unit by id
   '/reports/{id}':
     parameters:
