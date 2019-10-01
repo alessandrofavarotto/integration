@@ -1,0 +1,16 @@
+title: personLite
+type: object
+properties:
+  id:
+    type: string
+  firstName:
+    type: string
+  lastName:
+    type: string
+  fiscalCode:
+    type: string
+required:
+  - id
+  - firstName
+  - lastName
+  - fiscalCode

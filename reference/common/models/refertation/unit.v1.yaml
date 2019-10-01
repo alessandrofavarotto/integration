@@ -1,0 +1,16 @@
+title: unit
+type: object
+properties:
+  id:
+    type: string
+  description:
+    type: string
+  adress:
+    $ref: ./adress.v1.yaml
+  contats:
+    type: array
+    items:
+      $ref: ./contact.v1.yaml
+required:
+  - id
+  - description

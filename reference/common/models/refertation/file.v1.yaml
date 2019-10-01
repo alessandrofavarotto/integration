@@ -1,0 +1,26 @@
+title: file
+type: object
+x-examples: {}
+properties:
+  id:
+    type: string
+  type:
+    type: string
+    enum:
+      - PDF
+      - XML
+      - RTF
+  name:
+    type: string
+  creationDate:
+    type: string
+    format: date-time
+  data:
+    type: string
+    format: byte
+required:
+  - id
+  - type
+  - name
+  - creationDate
+  - data
