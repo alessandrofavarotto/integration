@@ -5,8 +5,8 @@ properties:
     type: string
   description:
     type: string
-  adress:
-    $ref: ./adress.v1.yaml
+  address:
+    $ref: ./address.v1.yaml
   contats:
     type: array
     items:
