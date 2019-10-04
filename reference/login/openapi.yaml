@@ -11,7 +11,7 @@ info:
 servers:
   - url: 'http://emedtest:8080/eintegration'
 paths:
-  /authenticate:
+  /autenticazione:
     post:
       operationId: '1'
       summary: POST Autenticazione Utente
@@ -41,5 +41,5 @@ paths:
             schema:
               $ref: ../common/models/login/user.v1.yaml
         description: user for login
-      description: login with return of token
+      description: "login dell'utente con ritorno del token e della sua durata"
     parameters: []
