@@ -6,11 +6,11 @@ properties:
   descrizione:
     type: string
   indirizzo:
-    $ref: ./indirizzo.v1.yaml
+    $ref: ./address.v1.yaml
   listaRecapiti:
     type: array
     items:
-      $ref: ./recapito.v1.yaml
+      $ref: ./report.v1.yaml
 required:
   - id
   - descrizione

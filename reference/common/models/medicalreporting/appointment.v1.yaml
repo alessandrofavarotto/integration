@@ -22,7 +22,7 @@ properties:
   listaPrestazioni:
     type: array
     items:
-      $ref: ./prestazione.v1.yaml
+      $ref: ./activity.v1.yaml
 required:
   - id
   - dataPrenotazione
