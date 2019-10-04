@@ -14,7 +14,7 @@ paths:
   /authenticate:
     post:
       operationId: '1'
-      summary: POST Authentication
+      summary: POST Autenticazione Utente
       tags: []
       responses:
         '200':
