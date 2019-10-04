@@ -21,7 +21,7 @@ paths:
         description: server id of acceptance
     get:
       operationId: '10'
-      summary: GET reports by acceptance ID
+      summary: GET referti per ID accettazione
       tags: []
       responses:
         '200':
@@ -59,7 +59,7 @@ paths:
   /referto:
     post:
       operationId: '9'
-      summary: POST report
+      summary: POST referto
       tags: []
       requestBody:
         content:
@@ -110,7 +110,7 @@ paths:
         description: server id of report
     get:
       operationId: '8'
-      summary: GET reports by ID
+      summary: GET referto per ID
       tags: []
       responses:
         '200':
@@ -193,7 +193,7 @@ paths:
         description: server id of operator
     get:
       operationId: '6'
-      summary: GET activities by operator ID
+      summary: GET prestazioni per ID operatore
       tags: []
       responses:
         '200':
@@ -234,7 +234,7 @@ paths:
         description: server id of operator
     get:
       operationId: '5'
-      summary: GET operator by ID
+      summary: GET operatore per ID
       tags: []
       responses:
         '200':
@@ -273,7 +273,7 @@ paths:
         description: fiscal code of operator
     get:
       operationId: '4'
-      summary: GET operator by CF
+      summary: GET operatore per Codice Fiscale
       tags: []
       responses:
         '200':
@@ -314,7 +314,7 @@ paths:
         description: server id of patient
     get:
       operationId: '3'
-      summary: GET patients by ID
+      summary: GET paziente per ID
       tags: []
       responses:
         '200':
@@ -356,7 +356,7 @@ paths:
         description: server id of operator
     get:
       operationId: '2'
-      summary: GET acceptances by operator ID
+      summary: GET accettazioni per ID operatore
       tags: []
       responses:
         '200':
@@ -403,7 +403,7 @@ paths:
         description: server id of operator
     get:
       operationId: '1'
-      summary: GET appointments by operator ID
+      summary: GET prenotazioni per ID operatore
       tags: []
       responses:
         '200':
