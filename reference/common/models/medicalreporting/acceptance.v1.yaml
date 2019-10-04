@@ -6,7 +6,7 @@ properties:
   dataAccettazione:
     type: string
     format: date-time
-  idPaziente:
+  paziente:
     $ref: ./personlite.v1.yaml
   idAppuntamento:
     type: string
@@ -27,7 +27,7 @@ properties:
 required:
   - id
   - dataAccettazione
-  - idPaziente
+  - paziente
   - idAppuntamento
   - idSede
   - idOperatore

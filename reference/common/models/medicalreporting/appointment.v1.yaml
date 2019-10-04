@@ -8,7 +8,7 @@ properties:
     format: date-time
   durata:
     type: integer
-  idPaziente:
+  paziente:
     $ref: ./personlite.v1.yaml
   idOperatore:
     type: string
@@ -27,7 +27,7 @@ required:
   - id
   - dataPrenotazione
   - durata
-  - idPaziente
+  - paziente
   - idOperatore
   - idSede
   - stato
