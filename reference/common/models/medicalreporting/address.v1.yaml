@@ -1,18 +1,22 @@
-title: address
+title: indirizzo
 type: object
 properties:
   id:
     type: string
-  streetAddress:
+  indirizzo:
     type: string
-  cityName:
+  comune:
     type: string
-  cityCode:
+  cap:
     type: string
-  country:
+  provincia:
+    type: string
+  siglaProvincia:
     type: string
 required:
   - id
-  - streetAddress
-  - cityName
-  - cityCode
+  - indirizzo
+  - comune
+  - cap
+  - provicia
+  - siglaProvincia

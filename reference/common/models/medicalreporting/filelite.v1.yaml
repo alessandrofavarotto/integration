@@ -3,18 +3,18 @@ type: object
 properties:
   id:
     type: string
-  name:
+  nome:
     type: string
-  type:
+  estensione:
     type: string
     enum:
       - PDF
       - XML
       - RTF
-  creationDate:
+  dataCreazione:
     type: string
 required:
   - id
-  - name
-  - type
-  - creationDate
+  - nome
+  - estensione
+  - dataCreazione

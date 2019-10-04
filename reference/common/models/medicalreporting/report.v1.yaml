@@ -1,26 +1,26 @@
-title: report
+title: referto
 type: object
 properties:
   id:
     type: string
-  acceptanceId:
+  idAccettazione:
     type: string
   file:
     $ref: ./file.v1.yaml
-  operatorId:
+  idOperatore:
     type: string
-  activities:
+  listaAttivita:
     type: array
     items:
       type: object
       properties:
-        activityId:
+        idAttivita:
           type: string
       required:
-        - activityId
+        - idAttivita
 required:
   - id
-  - acceptanceId
+  - idAccettazione
   - file
-  - operatorId
-  - activities
+  - idOperatore
+  - listaAttivita

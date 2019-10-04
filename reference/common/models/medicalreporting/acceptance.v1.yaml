@@ -1,35 +1,35 @@
-title: acceptance
+title: accettazione
 type: object
 properties:
   id:
     type: string
-  acceptanceDate:
+  dataAccettazione:
     type: string
     format: date-time
-  patinetId:
+  idPaziente:
     $ref: ./personlite.v1.yaml
-  appointmentId:
+  idAppuntamento:
     type: string
-  unitId:
+  idSede:
     type: string
-  operatorId:
+  idOperatore:
     type: string
-  status:
+  stato:
     type: string
     enum:
-      - CONFIRMED
-      - RUNNING
-      - COMPLETED
-  activities:
+      - ACCETTATO
+      - RICHIESTO
+      - COMPLETATO
+  listaPrestazioni:
     type: array
     items:
-      $ref: ./activity.v1.yaml
+      $ref: ./prestazione.v1.yaml
 required:
   - id
-  - acceptanceDate
-  - patinetId
-  - appointmentId
-  - unitId
-  - operatorId
-  - status
-  - activities
+  - dataAccettazione
+  - idPaziente
+  - idAppuntamento
+  - idSede
+  - idOperatore
+  - stato
+  - listaPrestazioni

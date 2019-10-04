@@ -1,7 +1,7 @@
-title: reportPost
+title: refertoPost
 type: object
 properties:
-  activities:
+  listaAttivita:
     type: array
     items:
       type: object
@@ -12,12 +12,12 @@ properties:
         - activityId
   file:
     $ref: ./file.v1.yaml
-  operatorId:
+  idOperatore:
     type: string
-  acceptanceId:
+  idAccettazione:
     type: string
 required:
-  - activities
+  - listAttivita
   - file
-  - operatorId
-  - acceptanceId
+  - idOperatore
+  - idAccettazione

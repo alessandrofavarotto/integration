@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Medical Reporting
+  title: Refertazione
   version: '1.0'
   license:
     name: Apache 2.0
@@ -9,9 +9,9 @@ info:
     url: 'http://mm-multimedia.it/'
   description: methods for manage integration of Medical Reporting
 servers:
-  - url: 'http://emedtest:8080/eintegrationalign'
+  - url: 'http://emedtest:8080/eintegration'
 paths:
-  '/reports/acceptance/{id}':
+  '/referto/accettazione/{id}':
     parameters:
       - schema:
           type: string
@@ -55,8 +55,8 @@ paths:
           name: token
           description: authentication token
           required: true
-      description: method to find reports of acceptance by id
-  /reports:
+      description: metodo per cercare referti per id accettazione
+  /referto:
     post:
       operationId: '9'
       summary: POST report
@@ -98,8 +98,9 @@ paths:
             application/json:
               schema:
                 $ref: ../common/models/error.v1.yaml
-      description: method to post a new report for acceptance and activities
-  '/reports/{id}':
+      description: motodo per introdurre un nuovo referto per accettazione e prestazioi
+    parameters: []
+  '/referto/{id}':
     parameters:
       - schema:
           type: string
@@ -137,8 +138,8 @@ paths:
           name: token
           description: authentication token
           required: true
-      description: method to find report by id
-  '/units/{id}':
+      description: "metodo per tornare il referto dato l'id"
+  '/sede/{id}':
     parameters:
       - schema:
           type: string
@@ -148,7 +149,7 @@ paths:
         description: server id of units
     get:
       operationId: '7'
-      summary: GET unit by ID
+      summary: GET sede per ID
       tags: []
       responses:
         '200':
@@ -181,8 +182,8 @@ paths:
           in: query
           name: id
           description: identify of unit
-      description: method to find unit by id
-  '/operators/activities/{id}':
+      description: metodo per trovare la sede per id
+  '/operatore/prestazioni/{id}':
     parameters:
       - schema:
           type: string
@@ -222,8 +223,8 @@ paths:
           name: token
           description: authentication token
           required: true
-      description: method to find activities of operator by id
-  '/operators/{id}':
+      description: "metodo per trovare tutte le prestazioni erogabili dal'operatore sanitario per id dell'operatore."
+  '/operatore/{id}':
     parameters:
       - schema:
           type: string
@@ -261,8 +262,8 @@ paths:
           name: token
           description: authentication token
           required: true
-      description: method to find operator by id
-  '/operators/cf/{cf}':
+      description: "metodo per trovare l'operatore per id"
+  '/operatore/cf/{cf}':
     parameters:
       - schema:
           type: string
@@ -302,8 +303,8 @@ paths:
           name: token
           description: authentication token
           required: true
-      description: method to find operator by fiscal code
-  '/patients/{id}':
+      description: "metodo per trovare l'operatore per codice fiscale."
+  '/paziente/{id}':
     parameters:
       - schema:
           type: string
@@ -337,7 +338,7 @@ paths:
             application/json:
               schema:
                 $ref: ../common/models/error.v1.yaml
-      description: method to find patient by id (the id of patient is in object acceptance/appoiment)
+      description: "metodo per cercare il paziente per id (l'id del paziente è presente nalla accettazione o appuntamento già tornato con altri metodi)."
       parameters:
         - schema:
             type: string
@@ -345,7 +346,7 @@ paths:
           name: token
           description: authentication token
           required: true
-  '/acceptances/operator/{id}':
+  '/accettazione/operatore/{id}':
     parameters:
       - schema:
           type: string
@@ -391,8 +392,8 @@ paths:
           name: token
           description: authentication token
           required: true
-      description: method to find acceptances of the operator by id
-  '/appointments/operator/{id}':
+      description: "metodo per trovare le accettazioni legate all'operatore per id dell'operatore."
+  '/prenotazioni/operatore/{id}':
     parameters:
       - schema:
           type: string
@@ -438,4 +439,4 @@ paths:
           name: token
           description: authentication token
           required: true
-      description: method to find appoitments of operator by id
+      description: "metodo per trovare le prenotazioni legate all'operatore per id dell'operatore"

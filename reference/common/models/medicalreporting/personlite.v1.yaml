@@ -1,16 +1,16 @@
-title: personLite
+title: personaLite
 type: object
 properties:
   id:
     type: string
-  firstName:
+  nome:
     type: string
-  lastName:
+  cognome:
     type: string
-  fiscalCode:
+  codiceFiscale:
     type: string
 required:
   - id
-  - firstName
-  - lastName
-  - fiscalCode
+  - nome
+  - cognome
+  - codiceFiscale

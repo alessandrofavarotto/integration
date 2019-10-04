@@ -1,10 +1,10 @@
-title: autheticateData
+title: datiAutenticazione
 type: object
 properties:
   token:
     type: string
-  duration:
+  durata:
     type: integer
 required:
   - token
-  - duration
+  - durata

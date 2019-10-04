@@ -1,26 +1,26 @@
-title: reportLite
+title: refertoLite
 type: object
 properties:
   id:
     type: string
-  acceptanceId:
+  idAccettazione:
     type: string
-  operatorId:
+  idOperatore:
     type: string
   file:
     $ref: ./filelite.v1.yaml
-  activities:
+  listaAttivita:
     type: array
     items:
       type: object
       properties:
-        activityId:
+        idAttivita:
           type: string
       required:
-        - activityId
+        - idAttivita
 required:
   - id
-  - acceptanceId
-  - operatorId
+  - idAccettazione
+  - idOperatore
   - file
-  - activities
+  - listaAttivita

@@ -4,23 +4,23 @@ x-examples: {}
 properties:
   id:
     type: string
-  type:
+  estensione:
     type: string
     enum:
       - PDF
       - XML
       - RTF
-  name:
+  nome:
     type: string
-  creationDate:
+  dataCreazione:
     type: string
     format: date-time
-  data:
+  dati:
     type: string
     format: byte
 required:
   - id
-  - type
-  - name
-  - creationDate
-  - data
+  - estensione
+  - nome
+  - dataCreazione
+  - dati

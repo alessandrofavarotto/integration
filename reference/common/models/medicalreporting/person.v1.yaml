@@ -1,41 +1,41 @@
-title: person
+title: persona
 type: object
 description: ''
 properties:
   id:
     type: string
-  firstName:
+  nome:
     type: string
-  lastName:
+  cognome:
     type: string
-  birthDate:
+  dataDiNascita:
     type: string
     format: date
-  birthCityName:
+  comuneDiNascita:
     type: string
-  gender:
+  sesso:
     type: string
     enum:
       - M
       - F
-  fiscalCode:
+  codiceFiscale:
     type: string
     maxLength: 16
     pattern: "/^(?:(?:[B-DF-HJ-NP-TV-Z]|[AEIOU])[AEIOU][AEIOUX]|[B-DF-HJ-NP-TV-Z]{2}[A-Z]){2}[\\dLMNP-V]{2}(?:[A-EHLMPR-T](?:[04LQ][1-9MNP-V]|[1256LMRS][\\dLMNP-V])|[DHPS][37PT][0L]|[ACELMRT][37PT][01LM])(?:[A-MZ][1-9MNP-V][\\dLMNP-V]{2}|[A-M][0L](?:[1-9MNP-V][\\dLMNP-V]|[0L][1-9MNP-V]))[A-Z]$/i"
-  adress:
-    $ref: ./address.v1.yaml
-  birthCountryName:
+  indirizzo:
+    $ref: ./indirizzo.v1.yaml
+  provinciaDiNascita:
     type: string
-  contacts:
+  listaRecapiti:
     type: array
     items:
-      $ref: ./contact.v1.yaml
+      $ref: ./recapito.v1.yaml
 required:
   - id
-  - firstName
-  - lastName
-  - birthDate
-  - birthCityName
-  - gender
-  - fiscalCode
-  - birthCountryName
+  - nome
+  - cognome
+  - dataDiNascita
+  - comuneDiNascita
+  - sesso
+  - codiceFiscale
+  - provinciaDiNascita

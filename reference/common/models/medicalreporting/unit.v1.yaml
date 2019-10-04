@@ -1,16 +1,16 @@
-title: unit
+title: sede
 type: object
 properties:
   id:
     type: string
-  description:
+  descrizione:
     type: string
-  address:
-    $ref: ./address.v1.yaml
-  contats:
+  indirizzo:
+    $ref: ./indirizzo.v1.yaml
+  listaRecapiti:
     type: array
     items:
-      $ref: ./contact.v1.yaml
+      $ref: ./recapito.v1.yaml
 required:
   - id
-  - description
+  - descrizione

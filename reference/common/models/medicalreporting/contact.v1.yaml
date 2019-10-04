@@ -1,17 +1,17 @@
-title: contact
+title: recapito
 type: object
 properties:
   id:
     type: string
-  value:
+  valore:
     type: string
-  type:
+  tipo:
     type: string
     enum:
-      - PHONE
-      - MOBILE
+      - TELEFONO_FISSO
+      - TELEFONO_MOBILE
       - EMAIL
 required:
   - id
-  - value
-  - type
+  - valore
+  - tipo

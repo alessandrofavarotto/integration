@@ -1,35 +1,34 @@
-title: appointment
+title: prenotazione
 type: object
 properties:
   id:
     type: string
-  appointmentDate:
+  dataPrenotazione:
     type: string
     format: date-time
-  duration:
+  durata:
     type: integer
-  patientId:
+  idPaziente:
     $ref: ./personlite.v1.yaml
-  operatorId:
+  idOperatore:
     type: string
-  unitId:
+  idSede:
     type: string
-  status:
+  stato:
     type: string
     enum:
-      - CONFIRMED
-      - RUNNING
-      - COMPLETED
-  activities:
+      - PRENOTATO
+      - ACCETTATO
+  listaPrestazioni:
     type: array
     items:
-      $ref: ./activity.v1.yaml
+      $ref: ./prestazione.v1.yaml
 required:
   - id
-  - appointmentDate
-  - duration
-  - patientId
-  - operatorId
-  - unitId
-  - status
-  - activities
+  - dataPrenotazione
+  - durata
+  - idPaziente
+  - idOperatore
+  - idSede
+  - stato
+  - listaPrestazioni

@@ -1,13 +1,13 @@
-title: organizationService
+title: servizioOrganizzativo
 type: object
 properties:
   id:
     type: string
-  description:
+  descrizione:
     type: string
-  code:
+  codice:
     type: string
 required:
   - id
-  - description
-  - code
+  - descrizione
+  - codice
