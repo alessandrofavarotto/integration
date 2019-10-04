@@ -5,7 +5,7 @@ info:
   contact:
     name: Multimedia s.r.l.
     url: 'http://mm-multimedia.it/'
-  description: method for authentication of user
+  description: "metodi per l'autenticazione dell'utente"
   license:
     name: Apache 2.0
 servers:
