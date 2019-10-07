@@ -16,7 +16,7 @@ properties:
       - INACTIVE
   regionalCode:
     type: string
-  organizationService:
+  servizioOrganizzativo:
     $ref: ./organizationservice.v1.yaml
 required:
   - id
@@ -24,4 +24,4 @@ required:
   - codeSSN
   - status
   - regionalCode
-  - organizationService
+  - servizioOrganizzativo
