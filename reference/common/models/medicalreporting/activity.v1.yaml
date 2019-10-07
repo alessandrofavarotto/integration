@@ -3,25 +3,25 @@ type: object
 properties:
   id:
     type: string
-  description:
+  descrizione:
     type: string
-  codeSSN:
+  codiceSSN:
     type: string
-  duration:
+  durata:
     type: integer
-  status:
+  stato:
     type: string
     enum:
       - ACTIVE
       - INACTIVE
-  regionalCode:
+  codiceRegionale:
     type: string
   servizioOrganizzativo:
     $ref: ./organizationservice.v1.yaml
 required:
   - id
-  - description
-  - codeSSN
-  - status
-  - regionalCode
+  - descrizione
+  - codiceSSN
+  - stato
+  - codiceRegionale
   - servizioOrganizzativo
