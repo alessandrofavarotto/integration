@@ -1,23 +1,22 @@
 title: refertoPost
 type: object
 properties:
-  listaAttivita:
-    type: array
-    items:
-      type: object
-      properties:
-        activityId:
-          type: string
-      required:
-        - activityId
   file:
     $ref: ./file.v1.yaml
   idOperatore:
     type: string
   idAccettazione:
     type: string
+  listaPrestazione:
+    type: array
+    items:
+      type: object
+      properties:
+        idPrestazione:
+          type: string
+      required:
+        - idPrestazione
 required:
-  - listAttivita
   - file
   - idOperatore
   - idAccettazione

@@ -9,18 +9,18 @@ properties:
     $ref: ./file.v1.yaml
   idOperatore:
     type: string
-  listaAttivita:
+  listaPrestazioni:
     type: array
     items:
       type: object
       properties:
-        idAttivita:
+        idPrestazione:
           type: string
       required:
-        - idAttivita
+        - idPrestazione
 required:
   - id
   - idAccettazione
   - file
   - idOperatore
-  - listaAttivita
+  - listaPrestazioni

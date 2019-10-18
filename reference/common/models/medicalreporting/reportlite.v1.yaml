@@ -9,18 +9,18 @@ properties:
     type: string
   file:
     $ref: ./filelite.v1.yaml
-  listaAttivita:
+  listaPrestazioni:
     type: array
     items:
       type: object
       properties:
-        idAttivita:
+        idPrestazione:
           type: string
       required:
-        - idAttivita
+        - idPrestazione
 required:
   - id
   - idAccettazione
   - idOperatore
   - file
-  - listaAttivita
+  - listaPrestazioni
