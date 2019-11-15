@@ -13,4 +13,3 @@ required:
   - id
   - nome
   - cognome
-  - codiceFiscale
