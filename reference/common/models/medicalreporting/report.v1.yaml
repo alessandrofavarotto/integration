@@ -18,9 +18,12 @@ properties:
           type: string
       required:
         - idPrestazione
+  indisponibile:
+    type: boolean
 required:
   - id
   - idAccettazione
   - file
   - idOperatore
   - listaPrestazioni
+  - indisponibile

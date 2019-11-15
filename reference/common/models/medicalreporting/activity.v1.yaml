@@ -19,10 +19,12 @@ properties:
     type: string
   servizioOrganizzativo:
     $ref: ./organizationservice.v1.yaml
+  sedi:
+    type: array
+    items:
+      $ref: ./unit.v1.yaml
 required:
   - id
   - descrizione
-  - codiceSSN
   - stato
-  - codiceRegionale
   - servizioOrganizzativo

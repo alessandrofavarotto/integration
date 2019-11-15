@@ -16,7 +16,16 @@ properties:
           type: string
       required:
         - idPrestazione
+  stato:
+    type: string
+    enum:
+      - REFERTATO
+      - ANNULLATO
+  indisponibile:
+    type: boolean
 required:
   - file
   - idOperatore
   - idAccettazione
+  - stato
+  - indisponibile
