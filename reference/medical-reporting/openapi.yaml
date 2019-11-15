@@ -443,7 +443,7 @@ paths:
   '/paziente/cf/{cf}':
     get:
       operationId: '11'
-      summary: GET Paziente per CF
+      summary: GET paziente per CF
       tags: []
       responses:
         '200':
