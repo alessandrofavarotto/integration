@@ -12,8 +12,9 @@ properties:
   stato:
     type: string
     enum:
-      - ACTIVE
-      - INACTIVE
+      - ACCETTATO
+      - RICHIESTO
+      - COMPLETATO
   codiceRegionale:
     type: string
   servizioOrganizzativo:

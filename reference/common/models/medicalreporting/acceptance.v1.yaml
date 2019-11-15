@@ -14,16 +14,12 @@ properties:
     type: string
   idOperatore:
     type: string
-  stato:
-    type: string
-    enum:
-      - ACCETTATO
-      - RICHIESTO
-      - COMPLETATO
   listaPrestazioni:
     type: array
     items:
       $ref: ./activity.v1.yaml
+  pagante:
+    type: string
 required:
   - id
   - dataAccettazione
@@ -31,5 +27,4 @@ required:
   - idPrenotazione
   - idSede
   - idOperatore
-  - stato
   - listaPrestazioni
