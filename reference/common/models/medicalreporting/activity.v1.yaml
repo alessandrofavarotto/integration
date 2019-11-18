@@ -13,8 +13,7 @@ properties:
     type: string
     enum:
       - ACCETTATO
-      - RICHIESTO
-      - COMPLETATO
+      - REFERTATO
   codiceRegionale:
     type: string
   servizioOrganizzativo:

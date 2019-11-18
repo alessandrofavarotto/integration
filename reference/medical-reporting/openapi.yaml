@@ -82,10 +82,10 @@ paths:
               schema:
                 type: object
                 properties:
-                  reportId:
+                  IdReferto:
                     type: string
                 required:
-                  - reportId
+                  - IdReferto
         '400':
           description: Bad Request
           content:
@@ -504,9 +504,9 @@ paths:
         name: cfpiva
         in: path
         required: true
-  '/azienda/dipendenti/{cfipiva}':
+  '/azienda/dipendenti/{id}':
     get:
-      summary: "GET dipendenti per CF/PIVA dell'azienda"
+      summary: "GET dipendenti per ID dell'azienda"
       tags: []
       responses:
         '200':
@@ -529,17 +529,17 @@ paths:
             application/json:
               schema:
                 $ref: ../common/models/error.v1.yaml
-      description: "Ritorna i lavoratori per il cf/p.iva dell'azienda passato in ingresso"
+      description: "Ritorna i lavoratori per l'ID dell'azienda passato in ingresso"
       operationId: '14'
     parameters:
       - schema:
           type: string
-        name: cfipiva
+        name: id
         in: path
         required: true
-  '/azienda/checkup/scaduti/{cfpiva}':
+  '/azienda/checkup/scaduti/{id}':
     get:
-      summary: "GET checkup scaduti per CF/PIVA dell'azienda"
+      summary: "GET checkup scaduti per ID dell'azienda"
       tags: []
       responses:
         '200':
@@ -562,12 +562,12 @@ paths:
             application/json:
               schema:
                 $ref: ../common/models/error.v1.yaml
-      description: "Ritorna i dipendenti e le prestazioni dei checkup che sono scaduti per cf/p.iva dell'azienda"
+      description: "Ritorna i dipendenti e le prestazioni dei checkup che sono scaduti per ID dell'azienda"
       operationId: '13'
     parameters:
       - schema:
           type: string
-        name: cfpiva
+        name: id
         in: path
         required: true
   '/azienda/dipendente/mansioni/{id}':
@@ -596,6 +596,7 @@ paths:
               schema:
                 $ref: ../common/models/error.v1.yaml
       description: ritorna la lista delle mansioni del dipendente ricercato per id
+      operationId: '16'
     parameters:
       - schema:
           type: string
@@ -603,3 +604,43 @@ paths:
         in: path
         required: true
         description: ''
+  /referto/allegato:
+    post:
+      summary: POST allegato per ID referto
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  idAllegato:
+                    type: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                idReferto:
+                  type: string
+                '':
+                  $ref: ../common/models/medicalreporting/file.v1.yaml
+        description: ''
+      operationId: '15'
+      description: "gestisce l'invio di un allegato per id Referto"
+      tags: []
+    parameters: []
