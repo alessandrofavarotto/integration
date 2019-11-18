@@ -18,7 +18,7 @@ paths:
         name: id
         in: path
         required: true
-        description: server id of acceptance
+        description: "id dell'accettazione"
     get:
       operationId: '10'
       summary: GET referti per ID accettazione
@@ -52,8 +52,8 @@ paths:
         - schema:
             type: string
           in: header
-          name: token
-          description: authentication token
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
           required: true
       description: metodo per cercare referti per id accettazione
   /referto:
@@ -71,8 +71,8 @@ paths:
         - schema:
             type: string
           in: header
-          name: token
-          description: authentication token
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
           required: true
       responses:
         '200':
@@ -107,7 +107,7 @@ paths:
         name: id
         in: path
         required: true
-        description: server id of report
+        description: id del referto
     get:
       operationId: '8'
       summary: GET referto per ID
@@ -135,8 +135,8 @@ paths:
         - schema:
             type: string
           in: header
-          name: token
-          description: authentication token
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
           required: true
       description: "metodo per tornare il referto dato l'id"
   '/sede/{id}':
@@ -146,7 +146,7 @@ paths:
         name: id
         in: path
         required: true
-        description: server id of units
+        description: id della sede
     get:
       operationId: '7'
       summary: GET sede per ID
@@ -174,14 +174,9 @@ paths:
         - schema:
             type: string
           in: header
-          name: token
-          description: authentication token
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
           required: true
-        - schema:
-            type: string
-          in: query
-          name: id
-          description: identify of unit
       description: metodo per trovare la sede per id
   '/operatore/prestazioni/{id}':
     parameters:
@@ -190,7 +185,7 @@ paths:
         name: id
         in: path
         required: true
-        description: server id of operator
+        description: "id dell'operatore"
     get:
       operationId: '6'
       summary: GET prestazioni per ID operatore
@@ -220,8 +215,8 @@ paths:
         - schema:
             type: string
           in: header
-          name: token
-          description: authentication token
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
           required: true
       description: "metodo per trovare tutte le prestazioni erogabili dal'operatore sanitario per id dell'operatore."
   '/operatore/{id}':
@@ -231,7 +226,7 @@ paths:
         name: id
         in: path
         required: true
-        description: server id of operator
+        description: "id dell'operatore"
     get:
       operationId: '5'
       summary: GET operatore per ID
@@ -259,8 +254,8 @@ paths:
         - schema:
             type: string
           in: header
-          name: token
-          description: authentication token
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
           required: true
       description: "metodo per trovare l'operatore per id"
   '/operatore/cf/{cf}':
@@ -270,7 +265,7 @@ paths:
         name: cf
         in: path
         required: true
-        description: fiscal code of operator
+        description: "codice ficale dell'operatore"
     get:
       operationId: '4'
       summary: GET operatore per Codice Fiscale
@@ -300,8 +295,8 @@ paths:
         - schema:
             type: string
           in: header
-          name: token
-          description: authentication token
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
           required: true
       description: "metodo per trovare l'operatore per codice fiscale."
   '/paziente/{id}':
@@ -311,7 +306,7 @@ paths:
         name: id
         in: path
         required: true
-        description: server id of patient
+        description: id del paziente
     get:
       operationId: '3'
       summary: GET paziente per ID
@@ -343,8 +338,8 @@ paths:
         - schema:
             type: string
           in: header
-          name: token
-          description: authentication token
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
           required: true
   '/accettazione/operatore/{id}':
     parameters:
@@ -353,7 +348,7 @@ paths:
         name: id
         in: path
         required: true
-        description: server id of operator
+        description: "id dell'operatore"
     get:
       operationId: '2'
       summary: GET accettazioni per ID operatore
@@ -383,14 +378,14 @@ paths:
         - schema:
             type: string
           in: query
-          name: day
-          description: day of acceptance
+          name: data
+          description: data di accettazione
           required: true
         - schema:
             type: string
           in: header
-          name: token
-          description: authentication token
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
           required: true
       description: "metodo per trovare le accettazioni legate all'operatore per id dell'operatore."
   '/prenotazioni/operatore/{id}':
@@ -400,7 +395,7 @@ paths:
         name: id
         in: path
         required: true
-        description: server id of operator
+        description: id operatore
     get:
       operationId: '1'
       summary: GET prenotazioni per ID operatore
@@ -430,14 +425,14 @@ paths:
         - schema:
             type: string
           in: query
-          name: day
-          description: day of appointment
+          name: data
+          description: "data dell'appuntamento"
           required: true
         - schema:
             type: string
           in: header
-          name: token
-          description: authentication token
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
           required: true
       description: "metodo per trovare le prenotazioni legate all'operatore per id dell'operatore"
   '/paziente/cf/{cf}':
@@ -467,12 +462,20 @@ paths:
               schema:
                 $ref: ../common/models/error.v1.yaml
       description: Questo metodo torna la lista dei pazienti che conincidono con il cf passato
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
+          required: true
     parameters:
       - schema:
           type: string
         name: cf
         in: path
         required: true
+        description: codice ficale del paziente
   '/azienda/{cfpiva}':
     get:
       summary: GET aziende per CF/PIVA
@@ -498,12 +501,20 @@ paths:
                 $ref: ../common/models/error.v1.yaml
       description: Ritorna la lista delle aziende per cf/p.iva
       operationId: '12'
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
+          required: true
     parameters:
       - schema:
           type: string
         name: cfpiva
         in: path
         required: true
+        description: "codice ficale o partita iva dell'azienda"
   '/azienda/dipendenti/{id}':
     get:
       summary: "GET dipendenti per ID dell'azienda"
@@ -531,12 +542,20 @@ paths:
                 $ref: ../common/models/error.v1.yaml
       description: "Ritorna i lavoratori per l'ID dell'azienda passato in ingresso"
       operationId: '14'
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
+          required: true
     parameters:
       - schema:
           type: string
         name: id
         in: path
         required: true
+        description: "id dell'azienda"
   '/azienda/checkup/scaduti/{id}':
     get:
       summary: "GET checkup scaduti per ID dell'azienda"
@@ -564,12 +583,20 @@ paths:
                 $ref: ../common/models/error.v1.yaml
       description: "Ritorna i dipendenti e le prestazioni dei checkup che sono scaduti per ID dell'azienda"
       operationId: '13'
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
+          required: true
     parameters:
       - schema:
           type: string
         name: id
         in: path
         required: true
+        description: "id dell'azienda"
   '/azienda/dipendente/mansioni/{id}':
     get:
       summary: GET mansioni per ID del dipendente
@@ -597,13 +624,20 @@ paths:
                 $ref: ../common/models/error.v1.yaml
       description: ritorna la lista delle mansioni del dipendente ricercato per id
       operationId: '16'
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
+          required: true
     parameters:
       - schema:
           type: string
         name: id
         in: path
         required: true
-        description: ''
+        description: id del dipendente
   /referto/allegato:
     post:
       summary: POST allegato per ID referto
@@ -617,6 +651,8 @@ paths:
                 properties:
                   idAllegato:
                     type: string
+                required:
+                  - idAllegato
         '401':
           description: Unauthorized
           content:
@@ -637,10 +673,26 @@ paths:
               properties:
                 idReferto:
                   type: string
-                '':
+                allegato:
                   $ref: ../common/models/medicalreporting/file.v1.yaml
+                stato:
+                  type: string
+                  enum:
+                    - INSERITO
+                    - ANNULLATO
+              required:
+                - idReferto
+                - allegato
+                - stato
         description: ''
       operationId: '15'
       description: "gestisce l'invio di un allegato per id Referto"
       tags: []
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
+          required: true
     parameters: []
