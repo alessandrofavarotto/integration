@@ -539,7 +539,7 @@ paths:
         required: true
   '/azienda/checkup/scaduti/{cfpiva}':
     get:
-      summary: "GET Checkup scaduti per CF/PIVA dell'azienda"
+      summary: "GET checkup scaduti per CF/PIVA dell'azienda"
       tags: []
       responses:
         '200':
