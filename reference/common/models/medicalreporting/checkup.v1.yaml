@@ -1,0 +1,32 @@
+title: checkup
+type: object
+properties:
+  prestazioni:
+    type: array
+    items:
+      $ref: ./activity.v1.yaml
+  dipendente:
+    $ref: ./worker.v1.yaml
+  dataUltimaEsecuzione:
+    type: string
+    format: date
+    example: '2019-07-11'
+  dataUltimaPrenotazione:
+    type: string
+    format: date
+    example: '2019-07-11'
+  dataUltimaAccettazione:
+    type: string
+    format: date
+    example: '2019-07-11'
+  periodo:
+    type: string
+  nota:
+    type: string
+required:
+  - prestazioni
+  - dipendente
+  - dataUltimaEsecuzione
+  - dataUltimaPrenotazione
+  - dataUltimaAccettazione
+  - periodo

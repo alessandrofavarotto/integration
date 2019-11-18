@@ -1,0 +1,14 @@
+title: mansione
+type: object
+properties:
+  id:
+    type: string
+  descrizione:
+    type: string
+  nota mansione:
+    type: string
+  nota dipendente:
+    type: string
+required:
+  - id
+  - descrizione

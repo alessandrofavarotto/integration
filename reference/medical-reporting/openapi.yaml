@@ -473,3 +473,133 @@ paths:
         name: cf
         in: path
         required: true
+  '/azienda/{cfpiva}':
+    get:
+      summary: GET aziende per CF/PIVA
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/medicalreporting/companywithlocations.v1.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+      description: Ritorna la lista delle aziende per cf/p.iva
+      operationId: '12'
+    parameters:
+      - schema:
+          type: string
+        name: cfpiva
+        in: path
+        required: true
+  '/azienda/dipendenti/{cfipiva}':
+    get:
+      summary: "GET dipendenti per CF/PIVA dell'azienda"
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../common/models/medicalreporting/worker.v1.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+      description: "Ritorna i lavoratori per il cf/p.iva dell'azienda passato in ingresso"
+      operationId: '14'
+    parameters:
+      - schema:
+          type: string
+        name: cfipiva
+        in: path
+        required: true
+  '/azienda/checkup/scaduti/{cfpiva}':
+    get:
+      summary: "GET Checkup scaduti per CF/PIVA dell'azienda"
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../common/models/medicalreporting/checkup.v1.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+      description: "Ritorna i dipendenti e le prestazioni dei checkup che sono scaduti per cf/p.iva dell'azienda"
+      operationId: '13'
+    parameters:
+      - schema:
+          type: string
+        name: cfpiva
+        in: path
+        required: true
+  '/azienda/dipendente/mansioni/{id}':
+    get:
+      summary: GET mansioni per ID del dipendente
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../common/models/medicalreporting/role.v1.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+      description: ritorna la lista delle mansioni del dipendente ricercato per id
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: ''

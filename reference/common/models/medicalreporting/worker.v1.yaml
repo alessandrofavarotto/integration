@@ -1,0 +1,9 @@
+title: lavoratore
+type: object
+properties:
+  dipendente:
+    $ref: ./person.v1.yaml
+  filiali:
+    type: array
+    items:
+      $ref: ./companylite.v1.yaml

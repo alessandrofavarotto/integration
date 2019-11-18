@@ -1,0 +1,28 @@
+title: azienda
+type: object
+description: ''
+properties:
+  id:
+    type: string
+  ragioneSociale:
+    type: string
+  cf:
+    type: string
+  descrizione:
+    type: string
+  nota:
+    type: string
+  indirizzo:
+    type: array
+    items:
+      $ref: ./address.v1.yaml
+  recapiti:
+    type: array
+    items:
+      $ref: ./contact.v1.yaml
+  partitaIva:
+    type: string
+required:
+  - id
+  - ragioneSociale
+  - indirizzo

@@ -1,0 +1,27 @@
+title: companyWithLocations
+type: object
+properties:
+  id:
+    type: string
+  ragioneSociale:
+    type: string
+  descrizione:
+    type: string
+  nota:
+    type: string
+  cf:
+    type: string
+  partitaIva:
+    type: string
+  indirizzo:
+    $ref: ./address.v1.yaml
+  recapiti:
+    type: array
+    items:
+      $ref: ./contact.v1.yaml
+  filiali:
+    type: array
+    items:
+      $ref: ./company.v1.yaml
+required:
+  - indirizzo

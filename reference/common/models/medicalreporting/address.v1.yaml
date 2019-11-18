@@ -9,8 +9,6 @@ properties:
     type: string
   cap:
     type: string
-  provincia:
-    type: string
   siglaProvincia:
     type: string
 required:
@@ -18,5 +16,4 @@ required:
   - indirizzo
   - comune
   - cap
-  - provicia
   - siglaProvincia
