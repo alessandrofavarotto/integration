@@ -1,8 +1,6 @@
 title: recapito
 type: object
 properties:
-  id:
-    type: string
   valore:
     type: string
   tipo:
@@ -12,6 +10,5 @@ properties:
       - TELEFONO_MOBILE
       - EMAIL
 required:
-  - id
   - valore
   - tipo

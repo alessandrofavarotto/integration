@@ -1,8 +1,6 @@
 title: indirizzo
 type: object
 properties:
-  id:
-    type: string
   indirizzo:
     type: string
   comune:
@@ -12,7 +10,6 @@ properties:
   siglaProvincia:
     type: string
 required:
-  - id
   - indirizzo
   - comune
   - cap
