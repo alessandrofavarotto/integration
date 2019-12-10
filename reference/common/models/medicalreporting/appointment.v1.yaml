@@ -23,6 +23,12 @@ properties:
     type: array
     items:
       $ref: ./activitysimple.v1.yaml
+  codiceModalAccess:
+    type: string
+  anno:
+    type: string
+  numero:
+    type: string
 required:
   - id
   - dataPrenotazione
