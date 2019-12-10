@@ -1,0 +1,24 @@
+title: prestazioneSemplice
+type: object
+properties:
+  id:
+    type: string
+  servizioOrganizzativo:
+    $ref: ./organizationservice.v1.yaml
+  codiceRegionale:
+    type: string
+  stato:
+    type: string
+    enum:
+      - ACCETTATO
+      - REFERTATO
+  durata:
+    type: integer
+  codiceSSN:
+    type: string
+  descrizione:
+    type: string
+required:
+  - id
+  - stato
+  - descrizione

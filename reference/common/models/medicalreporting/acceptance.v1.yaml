@@ -17,7 +17,7 @@ properties:
   listaPrestazioni:
     type: array
     items:
-      $ref: ./activity.v1.yaml
+      $ref: ./activitysimple.v1.yaml
   pagante:
     type: string
   codiceModalAccess:
