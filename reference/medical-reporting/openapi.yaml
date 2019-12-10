@@ -588,6 +588,18 @@ paths:
           name: Authentication
           description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
           required: true
+        - schema:
+            type: string
+          in: query
+          name: dataInizio
+          required: true
+          description: Data inizio ricerca
+        - schema:
+            type: string
+          in: query
+          name: dataFine
+          required: true
+          description: Data fine ricerca
     parameters:
       - schema:
           type: string
@@ -694,3 +706,83 @@ paths:
           description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
           required: true
     parameters: []
+  '/accettazione/user/{username}':
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../common/models/medicalreporting/acceptance.v1.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+      operationId: get-accettazione-user
+      description: Torna la lista delle accettazioni inserite da un utente in data odierna.
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
+          required: true
+    parameters:
+      - schema:
+          type: string
+        name: username
+        in: path
+        required: true
+        description: "nome dell'utente di Medica con cui è stata inserita l'accettazione"
+  '/accettazione/{modalAccessAnnoNumero}':
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/medicalreporting/acceptance.v1.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: ../common/models/error.v1.yaml
+      operationId: get-accettazione
+      description: "Recupera l'accettazione in medica a partire dal codice alfanumerico modalAccess+anno+numero."
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authentication
+          description: 'Deve essere prente un prefisso "Bearer" che precede il token che viene tornato in login'
+          required: true
+    parameters:
+      - schema:
+          type: string
+        name: modalAccessAnnoNumero
+        in: path
+        required: true
+        description: Codice Alfanumerico presente nel Pass di MEDICA

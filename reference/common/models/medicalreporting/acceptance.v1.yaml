@@ -20,6 +20,12 @@ properties:
       $ref: ./activity.v1.yaml
   pagante:
     type: string
+  codiceModalAccess:
+    type: string
+  anno:
+    type: string
+  numero:
+    type: string
 required:
   - id
   - dataAccettazione
@@ -28,3 +34,6 @@ required:
   - idSede
   - idOperatore
   - listaPrestazioni
+  - codiceModalAccess
+  - anno
+  - numero

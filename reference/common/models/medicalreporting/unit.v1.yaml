@@ -11,6 +11,9 @@ properties:
     type: array
     items:
       $ref: ./contact.v1.yaml
+  codice:
+    type: string
 required:
   - id
   - descrizione
+  - codice
