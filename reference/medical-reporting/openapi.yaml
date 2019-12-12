@@ -708,7 +708,7 @@ paths:
     parameters: []
   '/accettazione/user/{username}':
     get:
-      summary: Your GET endpoint
+      summary: GET accettazioni per username Operatore Sportello
       tags: []
       responses:
         '200':
@@ -749,7 +749,7 @@ paths:
         description: "nome dell'utente di Medica con cui è stata inserita l'accettazione"
   '/accettazione/{modalAccessAnnoNumero}':
     get:
-      summary: Your GET endpoint
+      summary: GET accettazione per codicealfanumerico
       tags: []
       responses:
         '200':
