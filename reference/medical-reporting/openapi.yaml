@@ -8,6 +8,7 @@ info:
     name: Multimedia s.r.l.
     url: 'http://mm-multimedia.it/'
   description: "metodi per la gestione dell'applicativo di Refertazione"
+tags: []
 servers:
   - url: 'http://emedtest:8080/eintegration'
 paths:
